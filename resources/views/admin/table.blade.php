@@ -10,28 +10,30 @@
             <th>id</th>
             <th>name</th>
             <th>email</th>
-            <th>compnay</th>
-            <th>image</th>
+            <th>Usertype</th>
             <th>Created_at</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-{{--        
-    @foreach($data as $emdata)
+       
+    @foreach($data as $usrdata)
     <tr>
-        <td>{{ $emdata->id }}</td>
-        <td>{{ $emdata->name }}</td>
-        <td>{{ $emdata->email }}</td>
-        <td>{{ $emdata->company }}</td>   
-        <td><img src="./images/{{  $emdata->image }}" alt="" height="100px" width="120px"></td>    
-        <td>{{ $emdata->created_at }}</td>  
-        <td>
+        <td>{{ $usrdata->id }}</td>
+        <td>{{ $usrdata->name }}</td>
+        <td>{{ $usrdata->email }}</td>
+        <td>{{ $usrdata->usertype }}</td>            
+        <td>{{ $usrdata->created_at }}</td>  
+        {{-- <td>
             <a href="{{ route('emp.delete',['id' => $emdata->id]) }}" class="btn btn-danger">Delete</a>
             <a href="{{ route('emp.edit',['id' => $emdata->id]) }}" class="btn btn-info">Edit</a>
+        </td> --}}
+        <td>
+            <a href="" class="btn btn-danger">Delete</a>
+            <a href="" class="btn btn-info">Edit</a>
         </td>
-    </tr>    
-    @endforeach --}}
+    </tr>
+    @endforeach
     </tbody>
 </table>
 

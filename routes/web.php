@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('rest.main');
-Route::get('/dash',[HomeController::class,'dashboard']);
+// Route::get('/dash',[HomeController::class,'dashboard']);
+Route::get('/logged',[HomeController::class,'logged'])->name('logged.in');
 
-
+// Route::get('/welcome',function()
+// {
+//     return view('welcome');
+// });
 
 
 Route::middleware([

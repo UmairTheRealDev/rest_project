@@ -92,15 +92,13 @@
                         <div class="text-center mt-4">
                             <h1 class="h2">Get started</h1>
                             <p class="lead">
-                                Start creating the best possible user experience for you customers.
+                               Get Registered For Better Experiernce
                             </p>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <div class="m-sm-4">
-
-
                                     <form method="POST" action="{{ route('register') }}" class="forms-sample">
                                         @csrf
                                       <div class="form-group">
@@ -146,7 +144,6 @@
                                       <button type="submit" class="btn btn-primary me-2">Submit</button>
                                       <button class="btn btn-dark">Cancel</button>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
