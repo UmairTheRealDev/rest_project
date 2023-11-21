@@ -15,8 +15,13 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                {{-- <a class="sidebar-link" href="{{ route('main.table') }}"> --}}
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                <a class="sidebar-link" href="{{ route('table_reserved') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Reserved Table</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('reservation.completed') }}">
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Completed</span>
                 </a>
             </li>
 

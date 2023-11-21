@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,10 @@ Route::get('/',[HomeController::class,'index'])->name('rest.main');
 // Route::get('/dash',[HomeController::class,'dashboard']);
 Route::get('/logged',[HomeController::class,'logged'])->name('logged.in');
 
+Route::post('/reservation',[ReservationController::class, "store"])->name("tbl.reserve");
+Route::get('/reservation',[ReservationController::class, "index"])->name("table_reserved");
+Route::get('/reservation{id}',[ReservationController::class, "Done"])->name("Done.Reservation");
+Route::get('/reservationcompleted',[ReservationController::class, "completed"])->name("reservation.completed");
 // Route::get('/welcome',function()
 // {
 //     return view('welcome');

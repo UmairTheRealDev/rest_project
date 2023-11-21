@@ -60,31 +60,25 @@
                     <li><a href="#menu" class="smoothScroll">Menu</a></li>
                     <li><a href="#contact" class="smoothScroll">Contact</a></li>
                     <li>
-
-                         @if (Route::has('login'))
-                             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                                 @auth
-                                     
-                                 <li>
-                                    <a href="{{ url('/dashboard') }}"
-                                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                                     
-                                     </li>
-                                 @else
-                                  <li>   <a href="{{ route('login') }}"
-                                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                                         in</a>
-                                        </li>
- 
-                                   <li>  @if (Route::has('register'))
-                                         <a href="{{ route('register') }}"
-                                             class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-
-                                     @endif
-                                   </li>
-                                 @endauth
-                             </div>
-                         @endif 
+                        @if (Route::has('login'))
+                        @auth
+                        <li>
+                        <x-app-layout>
+                        </x-app-layout>
+                    </li>
+                        @else
+                           <li> <a href="{{ route('login') }}"
+                                class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                                in</a>
+                            </li>
+                            @if (Route::has('register'))
+                            <li>  
+                            <a href="{{ route('register') }}"
+                                    class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                </li>
+                            @endif
+                        @endauth
+                    @endif
                      </li>                  
                 </ul>
             </div>
@@ -462,13 +456,14 @@
 
                     <div class="col-md-12 col-sm-12">
                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                            <h2>Contact Us</h2>
+                            <h2>Reserve Table</h2>
                         </div>
                     </div>
 
                     <!-- CONTACT FORM -->
-                    <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form"
+                    <form action="{{ route('tbl.reserve') }}" method="post" class="wow fadeInUp" id="contact-form" role="form"
                         data-wow-delay="0.8s">
+                        @csrf
 
                         <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
                         <h6 class="text-success">Your message has been sent successfully.</h6>
@@ -485,15 +480,28 @@
                             <input type="email" class="form-control" id="cf-email" name="email"
                                 placeholder="Email address">
                         </div>
-
+                        <div class="col-md-6 col-sm-6">
+                            <input type="datetime-local" class="form-control"  name="reserve_time">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="number" class="form-control" id="cf-name" name="nog"
+                                placeholder="Number of Guests">
+                        </div>
                         <div class="col-md-12 col-sm-12">
-                            <input type="text" class="form-control" id="cf-subject" name="subject"
-                                placeholder="Subject">
+                            <input type="number" class="form-control" id="cf-name" name="contact_number"
+                                placeholder="Enter Your Contact number">
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                           
 
-                            <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
-
-                            <button type="submit" class="form-control" id="cf-submit" name="submit">Send
-                                Message</button>
+                            <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Write Special requirement"></textarea>
+                          
+                            <button type="submit" class="form-control" id="cf-submit" name="submit">Send  Message</button>
+                          
+                           
+                          
+                           
+                           
                         </div>
                     </form>
                 </div>
